@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>   
+    
+    <title>Müşteri Raporu</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Yönetim Paneli"/>
+    <meta name="Keywords" content="Yemeksepeti, Yönetim, Panel">
+    <meta name="googlebot" content="noarchive"/>
+    <meta name="Revisit-After" content="1 days"/>
+    <meta name="robots" content="index,contact"/>
+    <meta name="copyright" content="Yemeksepeti - 2021">    
+    <link href="ys_style_musteri.css" type="text/css" rel="stylesheet">    
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>  <!--METANIN ALTINA SCRİPTİ CHART EKLEMEK İÇİN KOPYALADIK-->
+    
+<script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartPyramidContainer", {
+	animationEnabled: true,
+	exportEnabled: true,
+	title:{
+		text: "Finansal Müşteri Analizi"
+	},
+	data: [{
+		type: "pyramid",
+		indexLabelFontSize: 10,
+		valueRepresents: "area",
+		showInLegend: true,
+		legendText: "{indexLabel}",
+		toolTipContent: "<b>{indexLabel}:</b> {y}%",
+		dataPoints: [
+			{ y: 70, indexLabel: "Gelirler: %10 Kâr: %10 " },
+			{ y: 15, indexLabel: "Gelirler: %20 Kâr: %20 " },
+			{ y: 10, indexLabel: "Gelirler: %30 Kâr: %30 " },
+			{ y: 5, indexLabel: "Gelirler: %40 Kâr: %40 " },
+			
+		]
+	}]
+});
+chart.render();
+var chart2 = new CanvasJS.Chart("chartPieContainer",{
+	animationEnabled: true,
+	title:{
+		text: "Müşteri Demografik Analiz",
+		horizontalAlign: "left"
+	},
+	data: [{
+		type: "doughnut",
+		startAngle: 60,
+		//innerRadius: 60,
+		indexLabelFontSize: 12,
+		indexLabel: "{label} - #percent%",
+		toolTipContent: "<b>{label}:</b> {y} (#percent%)",
+		dataPoints: [
+			{ y: 5, label: "12-14 Yaş" },
+			{ y: 25, label: "15-19 Yaş" },
+			{ y: 40, label: "20-34 Yaş" },
+			{ y: 20, label: "35-49 Yaş"},
+			{ y: 5, label: "50-64 Yaş"},
+			{ y: 5, label: "65+ Yaş"}
+		]
+	}]
+});
+chart2.render();
+
+var chart3 = new CanvasJS.Chart("chartPieContainer2", {
+	exportEnabled: true,
+	animationEnabled: true,
+	title:{
+		text: "Sosyokültürel Müşteri Analizi(Eğitim Düzeyleri)"
+	},
+	legend:{
+		cursor: "pointer",
+		itemclick: explodePie
+	},
+	data: [{
+		type: "pie",
+		showInLegend: true,
+		toolTipContent: "{name}: <strong>{y}%</strong>",
+		indexLabel: "{name} - {y}%",
+		dataPoints: [
+			{ y: 20, name: "İlkokul"},
+			{ y: 25, name: "Ortaokul"},
+			{ y: 25, name: "Lise", exploded:true },
+			{ y: 10, name: "Üniversite(Meslek Yüksekokulu)" },
+			{ y: 20, name: "Üniversite(4 Yıllık)" },
+			
+		]
+	}]
+});
+chart3.render();
+function explodePie (e) {
+	if(typeof (e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e.dataPointIndex].exploded) {
+		e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
+	} else {
+		e.dataSeries.dataPoints[e.dataPointIndex].exploded = false;
+	}
+	e.chart.render();
+
+}
+
+}
+//Java Script Kodları    
+</script>    
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header_genel">
+                <div class="header_ic1">
+                    <img class="logo" src="images/yemeksepeti.webp" alt="logo">
+                </div>
+                <div class="header_ic2">
+                    <form>
+                        <div id="box">
+                            <input type="text" id="search" placeholder="Merak Ettikleriniz...">
+                            <i class="fa fa-search"></i>
+                        </div>
+                     </form>
+                </div>
+                <div class="header_ic3">
+                    <img class="mesaj" src="images/mesaj.png" alt="mesaj">
+                    <img class="bildirim" src="images/bildirim.png" alt="bildirim">
+                    <img class="ayarlar" src="images/ayarlar.png" alt="ayarlar">
+                </div>
+            </div>
+        </div>
+        <div class="headerin_alti">            
+            <div class="sidebar">                
+                <div class="menu">                    
+                    <div class="menu_yazi">
+                        ANA MENU
+                    </div>
+                    <img class="menu_logo" src="images/menu_cizgi.png" alt="menu_cizgi">               
+                </div>                                                
+                <div class="panel">
+                    <img class="icon" src="images/yonetim_panel_icon.png">
+                    <span class="span"><a href="ys_anasayfa.html" style="color:black" class="linkler">YÖNETİM PANELİ</a></span>                 
+                </div>
+                <hr width="200" align="center" color="#696969">
+                <div class="panel">
+                    <img class="icon" src="images/restaurantlar.png">
+                    <span class="span"><a href="ys_restaurantlar.html" style="color:black" class="linkler">RESTAURANTLAR</a></span>
+                </div>
+                <hr width="200" align="center" color="#696969">
+                <div class="panel">
+                    <img class="icon" src="images/siparisler.png">
+                    <span class="span"><a href="ys_siparis_raporu.html" style="color:black" class="linkler">SİPARİŞ RAPORU</a></span>
+                </div>
+                <hr width="200" align="center" color="#696969">
+                <div class="panel">
+                    <img class="icon" src="images/musteriler.png">
+                    <span class="span"><a href="ys_musteri_raporu.html" style="color:black" class="linkler">MÜŞTERİ RAPORU</a></span>
+                </div>
+                <hr width="200" align="center" color="#696969">
+                <div class="panel">
+                    <img class="icon" src="images/personeller.png">
+                    <span class="span"><a href="ys_personel_raporu.html" style="color:black" class="linkler">PERSONEL RAPORU</a></span>
+                </div>
+                <hr width="200" align="center" color="#696969">
+                <div class="panel">
+                    <img class="icon" src="images/cikis.png">
+                    <span class="span">ÇIKIŞ</span>
+                </div>                
+            </div>
+            <div class="content">
+                <div class="content_ustu">
+                    <div class="content_ustundeki_yazi">
+                        Detaylı Müşteri Analizleri
+                        <div class="content_ustundeki_link">
+                            <a href="ys_siparis_raporu.html">Sipariş Sayfasına Geri Dönmek İçin Tıklayınız.</a>
+                        </div>
+                    </div>                        
+                </div>
+                
+                               
+                <div class="content_orta">
+                    <div class="kutu_content_icerik">
+                        <div id="chartPyramidContainer">
+                        </div>                        
+                    </div>
+                    <div class="kutu_content_icerik">
+                        <div id="chartPieContainer">
+                        </div>
+                        
+
+                    </div>
+                    <div class="kutu_content_icerik">
+                        <div id="chartPieContainer2">
+                        </div>
+                                                
+                    </div>                                                                                
+                </div>
+                <div class="content_alt">
+                    <div id="siparis_tablo">
+                        <table cellspacing="0" cellpadding="0" bordercolor="lightgray" border="0">
+                            <tr>
+                            <td height="40" width="100" bgcolor="#f6a15f" align="center"><font color="black"><b>Referans</b></font></td>
+                            <td width="120" bgcolor="#f6a15f" align="center"><font color="black"><b>Müşteri</b></font></td>                           
+                            <td width="120" bgcolor="#f6a15f" align="center"><font color="black"><b>Sipariş</b></font></td>
+                            <td width="120" bgcolor="#f6a15f" align="center"><font color="black"><b>Restaurant</b></font></td>
+                            <td width="120" bgcolor="#f6a15f" align="center"><font color="black"><b>Sevkiyat Tipi</b></font></td>
+                            <td width="120" bgcolor="#f6a15f" align="center"><font color="black"><b>Toplam</b></font></td>                            
+                            <td width="120" bgcolor="#f6a15f" align="center"><font color="black"><b>Oylama</b></font></td>                            
+                            <td width="270" bgcolor="#f6a15f" align="center"><font color="black"><b>Yorum</b></font></td>                                                        
+                            </tr>
+                                                                                                                                                                       
+                                                       
+                            <tr bgcolor="#FFFFFF">
+                            <td height="45" align="center"><font color="#000000"><b>1</b></font></td>
+                            <td align="center">Nilsu Varol</td>
+                            <td align="center">Çiğ Köfte Dürüm</td>
+                            <td align="center">Battalbey</td>
+                            <td align="center">Paket Servis</td>
+                            <td align="center">12.50 ₺</td>
+                            <td align="center">⭐⭐⭐⭐⭐</td>
+                            <td align="center"><marquee behavior="scroll"  scrollamount="3">Paketleme oldukça özenliydi.</marquee></td>                                                        
+                            </tr>
+                                                                                    
+                            </tr>                            
+                            <tr bgcolor="#FFFFFF">
+                            <td height="45" align="center"><font color="#000000"><b>2</b></font></td>
+                            <td align="center">Ayberk Göker</td>
+                            <td align="center">Pizza Margarita</td>
+                            <td align="center">Dominos Pizza </td>
+                            <td align="center">Paket Servis</td>
+                            <td align="center">75.00 ₺</td>
+                            <td align="center">⭐⭐⭐</td>
+                            <td align="center"><marquee behavior="scroll"  scrollamount="3">Pizza getirilene kadar soğumuştu fakat lezzetinden hiçbir şey kaybetmemişti teşekkürler.</marquee></td>                                                                                
+                            </tr> 
+                            
+                            </tr>                            
+                            <tr bgcolor="#FFFFFF">
+                            <td height="45" align="center"><font color="#000000"><b>3</b></font></td>
+                            <td align="center">Özde Kaymaz</td>
+                            <td align="center">Dana Rosto</td>
+                            <td align="center">Köfteci Yusuf</td>
+                            <td align="center">Paket Servis</td>
+                            <td align="center">89.75 </td>
+                            <td align="center">⭐⭐⭐⭐</td>
+                            <td align="center"><marquee behavior="scroll"  scrollamount="3">Bir porsiyon söylememize rağmen eşimle birlikte yedik ve arttı bile. Emeğiniz İçin Teşekkürler.</marquee></td>                                                                                 
+                            </tr>
+
+
+                            </tr>                            
+                            <tr bgcolor="#FFFFFF">
+                            <td height="45" align="center"><font color="#000000"><b>4</b></font></td>
+                            <td align="center">Gülcan Yılmaz</td>
+                            <td align="center">Alfredo Makarna</td>
+                            <td align="center">Macaroni</td>
+                            <td align="center">Paket Servis</td>
+                            <td align="center">32.55 ₺</td>
+                            <td align="center">⭐⭐⭐⭐⭐</td>
+                            <td align="center"><marquee behavior="scroll"  scrollamount="3"> Alfredo sosuna bayıldım gerçekten. Bir tabak daha söylemeyi düşünüyorum.</marquee></td>
+                                                                                  
+                            </tr>
+
+
+
+                            <tr bgcolor="#FFFFFF">
+                            <td height="45" align="center"><font color="#000000"><b>5</b></font></td>
+                            <td align="center">İbrahim Tokgöz</td>
+                            <td align="center">Kral Burger Menu</td>
+                            <td align="center">Burger King</td>
+                            <td align="center">Paket Servis</td>
+                            <td align="center">62.25 ₺</td>
+                            <td align="center">⭐⭐⭐⭐</td>
+                            <td align="center"><marquee behavior="scroll"  scrollamount="3">Hızlı Gönderim..</marquee></td>
+                            
+                            
+                            </tr>
+                            
+                            
+                            </table>
+                    
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            
+
+        </div>
+        
+    </div>
+    
+    
+</body>
+</html>

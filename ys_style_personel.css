@@ -1,0 +1,315 @@
+body{
+    margin:0;
+    padding:0;
+    display: flex;
+    flex-direction: column;
+}
+
+.container{
+    display: block; /*Altında bulunan divleri üst üste koymaya yarıyor.*/
+    
+}
+/*------------------------------------------HEADER KISMI-------------------------------------- */
+.container .header{
+    width: 100%;
+    height: 60px;
+    background: #b01;
+    display: flex;
+    
+}
+
+.container .header .header_genel{
+    width: 100%;
+    height: 100%;
+    display: flex;  /* Responsive Tasarım*/
+    justify-content: flex-start;
+    background: #b01;
+    
+
+}
+
+.container .header .header_genel .header_ic1{
+    width: 200px;
+    height: 50px;
+    
+    margin: 15px 0 0 16px; /* Margin dışındaki dive göre konumlandırır. Biz header_genel e göre boşluk verdik. */
+    
+}
+
+.container .header .header_genel .header_ic1 .logo{
+    width: 160px;
+    height: 30px;
+    margin: 2px 0 0 0;
+}
+
+.container .header .header_genel .header_ic3{
+    width: 280px;
+    height: 50px;
+    margin: 5px 0 0 550px;
+    display: flex;
+    flex-wrap: wrap;
+    
+    margin-left: 625px;
+}
+
+.container .header .header_genel .header_ic3 .mesaj{
+    width: 30px;
+    height: 30px;
+    margin: 10px 0 0 0;
+}
+
+.container .header .header_genel .header_ic3 .bildirim{
+    width: 20px;
+    height: 23px;
+    margin: 13px 0 0 40px;
+}
+
+.container .header .header_genel .header_ic3 .ayarlar{
+    width: 23px;
+    height: 23px;
+    margin: 13px 0 0 40px;
+
+}
+
+.container .headerin_alti{
+    width: 100%;
+    height: 900px;
+    background:#f6f7f8;
+    display: flex;
+}
+
+
+.container .headerin_alti .sidebar{
+    width: 17%;
+    float: left;
+    height: auto;    
+    text-align: center;
+    background: #f6f7f8;   
+}
+
+.container .headerin_alti .sidebar .menu{
+    width: 100%;
+    height: 40px;
+    background:#000;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .headerin_alti .sidebar .menu .menu_yazi{
+    text-align: left;
+    color:#FFFFFF;
+    padding: 15px 0 0 20px;
+    font-size: 14px;
+    font-weight: bolder;
+    font-style: italic;    
+}
+
+.container .headerin_alti .sidebar .menu .menu_logo{
+    width: 20px;
+    height: 20px;
+    margin: 10px 5px 0 0;
+}
+
+
+.container .headerin_alti .sidebar .panel{
+    display: flex;
+    height: 70px;       
+}
+
+.container .headerin_alti .sidebar .panel:hover{
+    display: flex;
+    background: linear-gradient(rgb(255, 255, 78),#ff5b3e);    
+    color:white;
+    border-radius: 10px;       
+}
+
+
+.container .headerin_alti .sidebar .panel .icon{
+    width: 30px;
+    height: 30px;
+    margin: 25px 0 0 14px;   
+}
+
+.container .headerin_alti .sidebar .panel .span{
+    color:#000;
+    margin: 34px 0 35px 8px;
+    font-size:14px;
+    font-weight: bolder;    
+}
+
+.container .headerin_alti .sidebar .panel .span .linkler{
+    text-decoration: none;
+    color:#000;
+}
+
+.container .headerin_alti .sidebar .panel .span .linkler:hover{
+    padding-left:35px;
+    transition: all 1s;
+    font-weight: bold;
+    color: #b01;
+    font-style: oblique;    
+}
+/*------------------------------------------CONTENT KISMI-------------------------------------- */
+.container .headerin_alti .content{
+    display: flex;
+    flex-direction: column;
+    /*flex: 1; /*Tarayıcının genişliği kadar genişlesin anlamına geliyor.*/
+    height: 100%;
+    float: left;
+    width: 83%;     
+}
+
+.container .headerin_alti .content .content_en_alt{
+    display: flex;
+    flex-wrap: wrap; /*Kutular sayfaya sığmazsa sayfa küçüldükçe kutuları aşağıya atmaya yarar*/
+    justify-content: space-around;
+    width: 100%;
+    height: 235px;
+    
+    margin: 20px 0 0 0;    
+}   
+
+
+.container .headerin_alti .content .content_en_alt .kutu_content_icerik{
+    display: flex;
+    flex-direction: column;    
+    width: 325px;
+    height: 258px;     
+    border: 1px;
+    border-style: solid;
+    border-color: #eeeeee;        
+    background: #eeeeee;                
+    background-color: #eeeeee;
+}
+
+
+.container .headerin_alti .content .content_en_alt .kutu_content_icerik2{
+    display: inline-block;
+    flex-direction: column;    
+    width: 738px;
+    height: 262px;
+    /* margin: 20px; */
+    border: 1px;
+    border-style: solid;
+    border-color: #eeeeee;        
+    background: none;
+    margin-top: -2px;
+    background: 
+    #bfd3ee;
+     
+    
+}
+
+.container .headerin_alti .content .content_en_alt .kutu_content_icerik:hover{
+    display: flex;
+    flex-direction: column;    
+    width: 325px;
+    height: 240px;
+    /* margin: 20px; */
+    border: 1px;
+    border-style: solid;
+    border-color: #eeeeee;        
+    background: #eeeeee;   
+    box-shadow: 2px 2px 4px #000;
+    border-radius: 0px;
+    transition: border-radius 1s, box-shadow 2s;
+
+}
+
+.container .headerin_alti .content .content_ustu{
+    display: flex;
+    flex-wrap: wrap; /*Kutular sayfaya sığmazsa sayfa küçüldükçe kutuları aşağıya atmaya yarar*/
+    justify-content: space-around;
+    width: 100%;
+    height: 40px;
+       
+}
+
+.container .headerin_alti .content .content_ustu .content_ustundeki_yazi{
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;    
+    margin: 15px 0 0 -720px;
+    display: flex;
+       
+}
+
+.container .headerin_alti .content .content_alt{
+    width: 100%;
+    height: 255px;    
+    margin-top: 20px;
+}
+/*------------------------------------------SEARCHBAR KISMI-------------------------------------- */
+#box {
+    max-width: 300px;
+    position: relative;        
+}
+ 
+#box .fa-search {
+    position: absolute;
+    top: 14px;
+    left: 12px;
+    font-size: 15px;
+    
+}
+ 
+#search {
+    width: 250px;
+    height: 40px;
+    box-sizing: border-box;
+    border: 2px solid #b01;
+    border-radius: 4px;
+    font-size:15px;
+    font-weight: bolder;
+    padding: 12px 20px 12px 40px;
+    margin: 9px 0 0 40px;
+    box-shadow: 2px 2px 3px 3px;
+    
+}
+/*------------------------------------------TABLE KISMI-------------------------------------- */
+.container .headerin_alti .content .content_alt #siparis_tablo table tr:hover{
+    
+    background:#fcfca4;
+    color:#000;
+    border:black;
+    
+}
+
+#siparis_tablo{
+    padding-left: 18px;
+    margin-top:-5px;
+    
+}
+/*------------------------------------------CHART KISMI-------------------------------------- */
+#chartContainer{
+    width: 325px;
+    height: 400px;
+}
+
+#chartPieContainer{
+    width: 325px;
+    height: 240px;
+}
+
+#chartPieContainer2{
+    width: 325px;
+    height: 240px;
+}
+/*------------------------------------------FORM KISMI-------------------------------------- */
+#form1{
+    margin: 16px 0 0 150px;
+}
+
+#personel_kayit{
+    background: linear-gradient(rgb(255, 255, 78),#ff5b3e);  
+    margin: 5px 0 0 260px;
+    border-radius: 20px;
+}
+
+#personel_form{
+    margin-top: -13px;
+    border-color: #b01;
+}
+
+
+    

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>   
+    
+    <title>Yemek Sepeti</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Yönetim Paneli"/>
+    <meta name="Keywords" content="Yemeksepeti, Yönetim, Panel">
+    <meta name="googlebot" content="noarchive"/>
+    <meta name="Revisit-After" content="1 days"/>
+    <meta name="robots" content="index,contact"/>
+    <meta name="copyright" content="Yemeksepeti - 2021">
+    
+    <link href="style_anasayfa.css" type="text/css" rel="stylesheet">
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>    
+<script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "En Çok İndirim Sağlanan Lezzetler ve İndirim Yüzdeleri(%)"
+	},
+	
+	data: [{        
+		type: "column",  
+		showInLegend: true,
+        legendMarkerColor:"#6d78ad",
+        legendText: "En Çok İndirim Alan Lezzet",
+        toolTipContent: "<b>{indexLabel}:</b> {y}%",  //Yüzde Cinsinden Yazdırmak İçin Kullanılan Js Kodudur.
+		
+		dataPoints: [      
+			{ y: 60, label: "Hamburger"},
+			{ y: 20,  label: "Adana Kebap"},
+			{ y: 5,  label: "Döner"},
+			{ y: 25,  label: "İçli Köfte"},
+			{ y: 5,  label: "Alfredo" },
+			{ y: 50, label: "Çıtır Tavuk Menu" },						
+		]
+	}]
+});
+chart.render();
+
+var chart2 = new CanvasJS.Chart("chartContainer2", {
+        animationEnabled: true,
+        
+        title:{
+            text:"En İyi Çıkış Yapan Lezzetler(%)"
+        },
+        
+        axisX:{
+            interval: 1
+        },
+        axisY2:{
+            interlacedColor: "#e2e0e2",
+            gridColor: "rgba(1,77,101,.1)",
+            title: "Tercih Edilme Yüzdeleri"
+        },
+        data: [{
+            type: "bar",
+            name: "companies",
+            axisYType: "secondary",
+            color: "#f86a51",
+            toolTipContent: "<b>{indexLabel}:</b> {y}%",
+            dataPoints: [
+                { y: 65, label: "Kahvaltılıklar" },
+                { y: 65, label: "Çiğ Köfte" },
+                { y: 80, label: "Döner" },
+                { y: 70, label: "Deniz Ürünleri" },
+                { y: 75, label: "Kahveler" },
+                
+            ]
+        }]
+    });
+chart2.render();}
+
+function close_window() {
+  if (confirm("Yönetim Panelinden Ayrılmak İstediğinize Emin misiniz?")) {
+    close();
+  }
+}
+</script>        
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header_genel">
+                <div class="header_ic1">
+                    <img class="logo" src="images/yemeksepeti.webp" alt="logo">
+                </div>
+                <div class="header_ic2">
+                    <form>
+                        <div id="box">
+                            <input type="text" id="search" placeholder="Merak Ettikleriniz...">
+                            <i class="fa fa-search"></i>
+                        </div>
+                     </form>
+                </div>
+                <div class="header_ic3">
+                    <img class="mesaj" src="images/mesaj.png" alt="mesaj">
+                    <img class="bildirim" src="images/bildirim.png" alt="bildirim">
+                    <img class="ayarlar" src="images/ayarlar.png" alt="ayarlar">
+                </div>
+            </div>
+        </div>
+        <div class="headerin_alti">            
+            <div class="sidebar">                
+                <div class="menu">                    
+                    <div class="menu_yazi">
+                        ANA MENU
+                    </div>
+                    <img class="menu_logo" src="images/menu_cizgi.png" alt="menu_cizgi">               
+                </div>                                                
+                <div class="panel">
+                    <img class="icon" src="images/yonetim_panel_icon.png">
+                    <span class="span"><a href="ys_anasayfa.html" style="color:black" class="linkler">YÖNETİM PANELİ</a></span>                 
+                </div>
+                <hr width="200" align="center" color="#696969">
+                <div class="panel">
+                    <img class="icon" src="images/restaurantlar.png">
+                    <span class="span"><a href="ys_restaurantlar.html" style="color:black" class="linkler">RESTAURANTLAR</a></span>
+                    
+                </div>
+                <hr width="200" align="center" color="#696969">
+                <div class="panel">
+                    <img class="icon" src="images/siparisler.png">
+                    <span class="span"><a href="ys_siparis_raporu.html" style="color:black" class="linkler">SİPARİŞ RAPORU</a></span>
+                    
+                </div>
+                <hr width="200" align="center" color="#696969">
+                <div class="panel">
+                    <img class="icon" src="images/musteriler.png">
+                    <span class="span"><a href="ys_musteri_raporu.html" style="color:black" class="linkler">MÜŞTERİ RAPORU</a></span>
+                </div>
+                <hr width="200" align="center" color="#696969">
+                <div class="panel">
+                    <img class="icon" src="images/personeller.png">
+                    <span class="span"><a href="ys_personel_raporu.html" style="color:black" class="linkler">PERSONEL RAPORU</a></span>
+                </div>
+                <hr width="200" align="center" color="#696969">
+                <div class="panel">
+                    <img class="icon" src="images/cikis.png">
+                    <span class="span"><a href="#" onclick="close_window();return false;" style="color: black" class="linkler" >ÇIKIŞ</a></span>
+                    
+                </div>                
+            </div>
+            <div class="content">
+                <div class="content_ustu">
+                    <div class="kutu_icerik">
+                        <img class="icerik_img" src="images/visitors.png" alt="ziyaretci">
+                        <span class="icerik_span">TOPLAM GÖRÜNTÜLENME</span>
+                        <span class="icerik_sayi">23.119</span>
+                        <div class="yuzdelik_div">
+                            <span class="yuzdelik_yazi">%92.76 (Gün İçinde)</span>
+                            <img class="yuzdelik_resim " src="images/yukari.png" alt="ok">
+                        </div>
+                    </div>
+                    <div class="kutu_icerik">
+                        <img class="icerik_img" src="images/siparis.png" alt="siparis">
+                        <span class="icerik_span">TOPLAM SİPARİŞ</span>
+                        <span class="icerik_sayi">50.890</span>
+                        <div class="yuzdelik_div">
+                            <span class="yuzdelik_yazi">%52.99</span>
+                            <img class="yuzdelik_resim " src="images/asagi.png" alt="ok">
+                        </div>
+                    </div>
+                    <div class="kutu_icerik">
+                        <img class="icerik_img" src="images/customer.png" alt="yeni_musteri">
+                        <span class="icerik_span">YENİ MÜŞTERİ</span>
+                        <span class="icerik_sayi">40.600</span>
+                        <div class="yuzdelik_div">
+                            <span class="yuzdelik_yazi">%32.50</span>
+                            <img class="yuzdelik_resim " src="images/yukari.png" alt="ok">
+                        </div>
+                    </div>
+                    <div class="kutu_icerik">
+                        <img class="icerik_img" src="images/revenue.png" alt="net_kar">
+                        <span class="icerik_span">NET KÂR</span>
+                        <span class="icerik_sayi">37.500</span>
+                        <div class="yuzdelik_div">
+                            <span class="yuzdelik_yazi">%35.3</span>
+                            <img class="yuzdelik_resim " src="images/yukari.png" alt="ok">
+                        </div>
+                    </div>
+                </div>
+                <div class="content_orta">
+                    <div class="kutu_content_icerik">
+                        <div id="chartContainer">
+                        </div>                                                
+                    </div>
+                    <div class="kutu_content_icerik">
+                        <div id="chartContainer2">                            
+                        </div>                        
+                    </div>
+                    <div class="kutu_content_icerik">
+                        <iframe src="https://calendar.google.com/calendar/embed?height=240&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FIstanbul&amp;src=Z2lydThsaWZwdnFyazZuajlmYzJqcWRmbTBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23C0CA33&amp;showTitle=0&amp;showPrint=0&amp;showTabs=1&amp;showNav=1&amp;showCalendars=0&amp;showTz=0" style="border:solid 1px #777" width="325" height="240" frameborder="0" scrolling="no"></iframe>
+                    </div>                    
+                </div>
+                <div class="content_alti">
+                    <div class="content_alti_yazi">                        
+                            <marquee behavior="scroll">YILLIK LEZZET AJANDASI</marquee>                                              
+                    </div>                                        
+                </div>
+                <div class="content_en_alti">
+                    <div class="content_en_alti_icerik">
+                        <div class="content_en_alti_resim">
+                            <img class="favori_yemek" src="images/doner.jpg" alt="yemek">                            
+                        </div>
+                        <div class="content_alti_siparis_sayisi">
+                            25.00 ₺<br/>
+                            <marquee behavior="scroll" direction="down" scrollamount="3">15.000.000 SİPARİŞ</marquee><br/>
+                            
+                            <img class="content_alti_siparis_resmi" src="images/online_food.png" alt="online">
+                        </div>
+                    </div>                    
+                    <div class="content_en_alti_icerik">
+                        <div class="content_en_alti_resim">
+                            <img class="favori_yemek" src="images/lahmacun.jpg" alt="yemek">                                                                             
+                        </div>
+                        <div class="content_alti_siparis_sayisi">
+                            23.90 ₺<br/>
+                            <marquee behavior="scroll" direction="down" scrollamount="3">19.000.000 SİPARİŞ</marquee><br/>                            
+                            <img class="content_alti_siparis_resmi" src="images/online_food.png" alt="online">
+                        </div>                              
+                    </div>
+                    <div class="content_en_alti_icerik">                        
+                        <div class="content_en_alti_resim">
+                            <img class="favori_yemek" src="images/cikofte.jpg" alt="yemek">                                                        
+                        </div>
+                        <div class="content_alti_siparis_sayisi">
+                            30.99 ₺<br/>
+                            <marquee behavior="scroll" direction="down" scrollamount="3">13.000.000 SİPARİŞ</marquee><br/>                            
+                            <img class="content_alti_siparis_resmi" src="images/online_food.png" alt="online">
+                        </div>                        
+                    </div>
+                    <div class="content_en_alti_icerik">
+                        <div class="content_en_alti_resim">
+                            <img class="favori_yemek" src="images/adana.jpg" alt="yemek">                            
+                        </div>
+                        <div class="content_alti_siparis_sayisi">
+                            15.00 ₺<br/>
+                            <marquee behavior="scroll" direction="down" scrollamount="3">10.000.000 SİPARİŞ</marquee><br/>                            
+                            <img class="content_alti_siparis_resmi" src="images/online_food.png" alt="online">
+                        </div>                        
+                    </div>                    
+                </div>
+            </div>            
+        </div>
+        <div class="footer"><div class="footer_yazi">&#169; Yemeksepeti - 2021</div></div>       
+    </div>        
+</body>
+</html>

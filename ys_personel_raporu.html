@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>   
+    
+    <title>Personel Raporu</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Yönetim Paneli"/>
+    <meta name="Keywords" content="Yemeksepeti, Yönetim, Panel">
+    <meta name="googlebot" content="noarchive"/>
+    <meta name="Revisit-After" content="1 days"/>
+    <meta name="robots" content="index,contact"/>
+    <meta name="copyright" content="Yemeksepeti - 2021">    
+    <link href="ys_style_personel.css" type="text/css" rel="stylesheet">    
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>  <!--METANIN ALTINA SCRİPTİ CHART EKLEMEK İÇİN KOPYALADIK-->
+    
+<script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "Kurye ve Teslimat Değerlendirmeleri"
+	},
+	axisY: {
+		title: "Personel ID"
+	},
+	data: [{        
+		type: "column",  
+		showInLegend: true, 
+		legendMarkerColor: "grey",
+		legendText: "En yüksek Oylama 100 Üzerinden",
+		dataPoints: [      
+			{ y: 100, label: "023" },
+			{ y: 95,  label: "012" },
+			{ y: 90,  label: "013" },
+			{ y: 70,  label: "015" },
+			{ y: 75,  label: "018" },
+			{ y: 80, label: "029" },
+			{ y: 97,  label: "026" },
+			{ y: 90,  label: "025" }
+		]
+	}]
+});
+chart.render();
+
+var chart2 = new CanvasJS.Chart("chartPieContainer",{
+	animationEnabled: true,
+	title:{
+		text: "Müşteri Demografik Analiz",
+		horizontalAlign: "left"
+	},
+	data: [{
+		type: "doughnut",
+		startAngle: 60,
+		//innerRadius: 60,
+		indexLabelFontSize: 12,
+		indexLabel: "{label} - #percent%",
+		toolTipContent: "<b>{label}:</b> {y} (#percent%)",
+		dataPoints: [
+			{ y: 5, label: "12-14 Yaş" },
+			{ y: 25, label: "15-19 Yaş" },
+			{ y: 40, label: "20-34 Yaş" },
+			{ y: 20, label: "35-49 Yaş"},
+			{ y: 5, label: "50-64 Yaş"},
+			{ y: 5, label: "65+ Yaş"}
+		]
+	}]
+});
+chart2.render();
+
+var chart3 = new CanvasJS.Chart("chartPieContainer2", {
+	exportEnabled: true,
+	animationEnabled: true,
+	title:{
+		text: "Sosyokültürel Müşteri Analizi(Eğitim Düzeyleri)"
+	},
+	legend:{
+		cursor: "pointer",
+		itemclick: explodePie
+	},
+	data: [{
+		type: "pie",
+		showInLegend: true,
+		toolTipContent: "{name}: <strong>{y}%</strong>",
+		indexLabel: "{name} - {y}%",
+		dataPoints: [
+			{ y: 20, name: "İlkokul"},
+			{ y: 25, name: "Ortaokul"},
+			{ y: 25, name: "Lise", exploded:true },
+			{ y: 10, name: "Üniversite(Meslek Yüksekokulu)" },
+			{ y: 20, name: "Üniversite(4 Yıllık)" },
+			
+		]
+	}]
+});
+chart3.render();
+function explodePie (e) {
+	if(typeof (e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e.dataPointIndex].exploded) {
+		e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
+	} else {
+		e.dataSeries.dataPoints[e.dataPointIndex].exploded = false;
+	}
+	e.chart.render();
+
+}
+
+}
+//Java Script Kodları    
+</script>    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header_genel">
+                <div class="header_ic1">
+                    <img class="logo" src="images/yemeksepeti.webp" alt="logo">
+                </div>
+                <div class="header_ic2">
+                    <form>
+                        <div id="box">
+                            <input type="text" id="search" placeholder="Merak Ettikleriniz...">
+                            <i class="fa fa-search"></i>
+                        </div>
+                     </form>
+                </div>
+                <div class="header_ic3">
+                    <img class="mesaj" src="images/mesaj.png" alt="mesaj">
+                    <img class="bildirim" src="images/bildirim.png" alt="bildirim">
+                    <img class="ayarlar" src="images/ayarlar.png" alt="ayarlar">
+                </div>
+            </div>
+        </div>
+        <div class="headerin_alti">            
+            <div class="sidebar">                
+                <div class="menu">                    
+                    <div class="menu_yazi">
+                        ANA MENU
+                    </div>
+                    <img class="menu_logo" src="images/menu_cizgi.png" alt="menu_cizgi">               
+                </div>                                                
+                <div class="panel">
+                    <img class="icon" src="images/yonetim_panel_icon.png">
+                    <span class="span"><a href="ys_anasayfa.html" style="color:black" class="linkler">YÖNETİM PANELİ</a></span>                 
+                </div>
+                <hr width="200" align="center" color="#696969">
+                <div class="panel">
+                    <img class="icon" src="images/restaurantlar.png">
+                    <span class="span"><a href="ys_restaurantlar.html" style="color:black" class="linkler">RESTAURANTLAR</a></span>
+                </div>
+                <hr width="200" align="center" color="#696969">
+                <div class="panel">
+                    <img class="icon" src="images/siparisler.png">
+                    <span class="span"><a href="ys_siparis_raporu.html" style="color:black" class="linkler">SİPARİŞ RAPORU</a></span>
+                </div>
+                <hr width="200" align="center" color="#696969">
+                <div class="panel">
+                    <img class="icon" src="images/musteriler.png">
+                    <span class="span"><a href="ys_musteri_raporu.html" style="color:black" class="linkler">MÜŞTERİ RAPORU</a></span>
+                </div>
+                <hr width="200" align="center" color="#696969">
+                <div class="panel">
+                    <img class="icon" src="images/personeller.png">
+                    <span class="span"><a href="ys_personel_raporu.html" style="color:black" class="linkler">PERSONEL RAPORU</a></span>
+                </div>
+                <hr width="200" align="center" color="#696969">
+                <div class="panel">
+                    <img class="icon" src="images/cikis.png">
+                    <span class="span">ÇIKIŞ</span>
+                </div>                
+            </div>
+            <div class="content">
+                <div class="content_ustu">
+                    <div class="content_ustundeki_yazi">
+                        Çağrı Merkezi Personel Değerlendirmeleri                        
+                    </div>                        
+                </div>
+                <div class="content_alt">
+                    <div id="siparis_tablo">
+                        <table cellspacing="0" cellpadding="0" bordercolor="lightgray" border="0">
+                            <tr>
+                            <td height="40" width="100" bgcolor="#fcfca4" align="center"><font color="black"><b>Personel No</b></font></td>
+                            <td width="120" bgcolor="#f6a15f" align="center"><font color="black"><b>Personel</b></font></td>                           
+                            <td width="120" bgcolor="#fcfca4" align="center"><font color="black"><b>Giriş Tarihi</b></font></td>
+                            <td width="120" bgcolor="#f6a15f" align="center"><font color="black"><b>Yaş</b></font></td>
+                            <td width="120" bgcolor="#fcfca4" align="center"><font color="black"><b>Cinsiyet</b></font></td>
+                            <td width="120" bgcolor="#f6a15f" align="center"><font color="black"><b>Konu</b></font></td>                            
+                            <td width="120" bgcolor="#fcfca4" align="center"><font color="black"><b>Oylama</b></font></td>                            
+                            <td width="270" bgcolor="#f6a15f" align="center"><font color="black"><b>Son Müşteri Yorumu</b></font></td>                                                        
+                            </tr>
+                                                                                                                                                                       
+                                                       
+                            <tr bgcolor="#FFFFFF">
+                            <td height="45" align="center"><font color="#000000"><b>0001</b></font></td>
+                            <td align="center">Yavuz Selim</td>
+                            <td align="center">05.01.2018</td>
+                            <td align="center">23</td>
+                            <td align="center">Erkek</td>
+                            <td align="center">Sipariş İptali</td>
+                            <td align="center">⭐⭐⭐⭐⭐</td>
+                            <td align="center"><marquee behavior="scroll"  scrollamount="3">İlgili bir müşteri hizmetleri temsilcisi. Kendisini tebrik ediyorum. İşinin ehli.</marquee></td>                                                        
+                            </tr>
+                                                                                    
+                            </tr>                            
+                            <tr bgcolor="#FFFFFF">
+                            <td height="45" align="center"><font color="#000000"><b>0002</b></font></td>
+                            <td align="center">Ayşenur Gözcü</td>
+                            <td align="center">16.09.2015</td>
+                            <td align="center">32 </td>
+                            <td align="center">Kadın</td>
+                            <td align="center">Eksik Sipariş</td>
+                            <td align="center">⭐⭐⭐</td>
+                            <td align="center"><marquee behavior="scroll"  scrollamount="3">Arkadaş yardımcı olmaya çalıştı ilgisine teşekkürler.</marquee></td>                                                                                
+                            </tr> 
+                            
+                            </tr>                            
+                            <tr bgcolor="#FFFFFF">
+                            <td height="45" align="center"><font color="#000000"><b>0003</b></font></td>
+                            <td align="center">Cemile Canyurt</td>
+                            <td align="center">18.08.2019</td>
+                            <td align="center">25</td>
+                            <td align="center">Kadın</td>
+                            <td align="center">Sipariş Özensiz</td>
+                            <td align="center">⭐⭐⭐⭐</td>
+                            <td align="center"><marquee behavior="scroll"  scrollamount="3">Salatamdan kıl çıkması restaurantın hatası olmasına rağmen yemeksepetinin adıma indirim kuponu tanımlaması gönlümü almaya yetti. Çalışanınıza Teşekkürler.</marquee></td>                                                                                 
+                            </tr>
+
+
+                            </tr>                            
+                            <tr bgcolor="#FFFFFF">
+                            <td height="45" align="center"><font color="#000000"><b>0004</b></font></td>
+                            <td align="center">İsmail Mucuk</td>
+                            <td align="center">16.09.1999</td>
+                            <td align="center">42</td>
+                            <td align="center">Erkek</td>
+                            <td align="center">Sipariş İptali</td>
+                            <td align="center">⭐⭐⭐⭐⭐</td>
+                            <td align="center"><marquee behavior="scroll"  scrollamount="3">İsmail bey oldukça anlayışlı ve sakin bir çalışanınız. Kendisine Teşekkürler.</marquee></td>
+                                                                                  
+                            </tr>
+
+
+
+                            <tr bgcolor="#FFFFFF">
+                            <td height="45" align="center"><font color="#000000"><b>0005</b></font></td>
+                            <td align="center">İbrahim Candan</td>
+                            <td align="center">23.03.2021</td>
+                            <td align="center">21</td>
+                            <td align="center">Erkek</td>
+                            <td align="center">Para İadesi</td>
+                            <td align="center">⭐⭐⭐⭐</td>
+                            <td align="center"><marquee behavior="scroll"  scrollamount="3">Beyefendi oldukça kibar ve işine özen gösteriyor.</marquee></td>
+                            
+                            
+                            </tr>
+                            
+                            
+                            </table>                    
+                    </div>                                        
+                </div>                                                
+                <div class="content_en_alt">
+                    <div class="kutu_content_icerik">
+                        <div id="chartContainer">
+                        </div>                        
+                    </div>
+                    <div class="kutu_content_icerik2">
+                        <form id="personel_form">
+                            <fieldset>
+                                 <legend><b>PERSONEL KAYIT SİSTEMİ</b></legend>
+                                 <label>Personel Adı: *</label> <input type="text" size="33" required/> <br/><br/>
+                                 <label>Personel Soyadı:  *</label> <input type="text" size="30" required/> <br/><br/>
+                                 <label>Personel Doğum Tarihi: *</label> <input type="date" size="40" required/> <br/><br/>
+                                 <label>Cinsiyet: </label>
+                                 <input type="radio" name="cinsiyet"/> Kadın
+                                 <input type="radio" name="cinsiyet"/> Erkek<br><br>
+                                 <label>Telefon No: * </label><input type="tel" placeholder="(___)(_______)" size="34" required/><br><br>
+                                 <label>Görev Alacağı Departman: </label>
+                                 <select>
+                                 <option>Motor Kurye</option>
+                                 <option>Yemeksepeti Express Kurye</optio>
+                                 <option>Çağrı Merkezi</option>
+                                 <option>İnsan Kaynakları</option>
+                                 <option>Muhasebe</optio>
+                                 <option>Bilişim(IT)</option>
+                                 <option>Ar-Ge</option>
+                                 <option>Pazarlama</option>
+                                 <option>Yönetim</option>
+                                 </select><br>                                 
+                                 <input type="submit" value="PERSONELİ KAYDET" id="personel_kayit"/>
+                            </fieldset>
+                        </form>                                                                                             
+                    </div>                                                                                                    
+                </div>
+               
+            </div>
+            
+
+        </div>
+        
+    </div>        
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>   
+    
+    <title>Sipariş Raporu</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Yönetim Paneli"/>
+    <meta name="Keywords" content="Yemeksepeti, Yönetim, Panel">
+    <meta name="googlebot" content="noarchive"/>
+    <meta name="Revisit-After" content="1 days"/>
+    <meta name="robots" content="index,contact"/>
+    <meta name="copyright" content="Yemeksepeti - 2021">    
+    <link href="ys_style_siparis.css" type="text/css" rel="stylesheet">   
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>  <!--METANIN ALTINA SCRİPTİ CHART EKLEMEK İÇİN KOPYALADIK-->
+    
+<script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "Saat Aralıklarına Göre Günlük Sipariş Sayısı"
+	},
+	
+	data: [{        
+		type: "column",  
+		showInLegend: true,
+        legendMarkerColor:"blue",
+        legendText: "En Yoğun Saat Aralığı", 
+		
+		dataPoints: [      
+			{ y: 150000, label: "08.00-09.30" },
+			{ y: 111822,  label: "09.30-11.00" },
+			{ y: 156533,  label: "11.00-12.30" },
+			{ y: 158456,  label: "12.30-14.00" },
+			{ y: 142503,  label: "14.00-16.00" },
+			{ y: 150500, label: "16.00-18.00" },
+			{ y: 300000,  label: "18.00-20.00" },
+			{ y: 222900,  label: "20.00-24.00" }
+		]
+	}]
+});
+chart.render();
+
+var chart2 = new CanvasJS.Chart("chartContainer2", {
+	animationEnabled: true,
+	exportEnabled: true,
+	theme: "light1",
+	title:{
+		text: "Kullanıcı Sipariş Hareketleri"
+	},
+	data: [{
+		type: "pyramid",
+		yValueFormatString: "#\"%\"",
+		indexLabelFontColor: "black",
+		indexLabelFontSize: 14,
+		indexLabel: "{label} - {y}",
+		//reversed: true, // Reverses the pyramid
+		dataPoints: [
+			{ y: 100, label: "Site Ziyareti" },
+			{ y: 45, label: "Sepete Ekleme" },
+			{ y: 35, label: "Sipariş Verme" },
+			{ y: 15, label: "Sipariş İptali Gerçekleştirme" },
+            {y: 10, label: "Sipariş İadesi İsteme"}
+			
+		]
+	}]
+});
+chart2.render();
+
+var chart3 = new CanvasJS.Chart("chartContainer3", {
+	animationEnabled: true,
+	title:{
+		text: "Sipariş İşleminde Kullanılan Platform İstatistikleri",
+		horizontalAlign: "left"
+	},
+	data: [{
+		type: "doughnut",
+		startAngle: 60,
+		//innerRadius: 60,
+		indexLabelFontSize: 14,
+		indexLabel: "{label} - #percent%",
+		toolTipContent: "<b>{label}:</b> {y} (#percent%)",
+		dataPoints: [
+			{ y: 52, label: "Web" },
+			{ y: 28, label: "Apple Mobil App" },
+			{ y: 20, label: "Android Mobil App" },
+			
+		]
+	}]
+});
+chart3.render();
+}
+//Java Script Kodları    
+</script>    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header_genel">
+                <div class="header_ic1">
+                    <img class="logo" src="images/yemeksepeti.webp" alt="logo">
+                </div>
+                <div class="header_ic2">
+                    <form>
+                        <div id="box">
+                            <input type="text" id="search" placeholder="Merak Ettikleriniz...">
+                            <i class="fa fa-search"></i>
+                        </div>
+                     </form>
+                </div>
+                <div class="header_ic3">
+                    <img class="mesaj" src="images/mesaj.png" alt="mesaj">
+                    <img class="bildirim" src="images/bildirim.png" alt="bildirim">
+                    <img class="ayarlar" src="images/ayarlar.png" alt="ayarlar">
+                </div>
+            </div>
+        </div>
+        <div class="headerin_alti">            
+            <div class="sidebar">                
+                <div class="menu">                    
+                    <div class="menu_yazi">
+                        ANA MENU
+                    </div>
+                    <img class="menu_logo" src="images/menu_cizgi.png" alt="menu_cizgi">               
+                </div>                                                
+                <div class="panel">
+                    <img class="icon" src="images/yonetim_panel_icon.png">
+                    <span class="span"><a href="ys_anasayfa.html" style="color:black" class="linkler">YÖNETİM PANELİ</a></span>                 
+                </div>
+                <hr width="200" align="center" color="#696969">
+                <div class="panel">
+                    <img class="icon" src="images/restaurantlar.png">
+                    <span class="span"><a href="ys_restaurantlar.html" style="color:black" class="linkler">RESTAURANTLAR</a></span>
+                </div>
+                <hr width="200" align="center" color="#696969">
+                <div class="panel">
+                    <img class="icon" src="images/siparisler.png">
+                    <span class="span"><a href="ys_siparis_raporu.html" style="color:black" class="linkler">SİPARİŞ RAPORU</a></span>
+                </div>
+                <hr width="200" align="center" color="#696969">
+                <div class="panel">
+                    <img class="icon" src="images/musteriler.png">
+                    <span class="span"><a href="ys_musteri_raporu.html" style="color:black" class="linkler">MÜŞTERİ RAPORU</a></span>
+                </div>
+                <hr width="200" align="center" color="#696969">
+                <div class="panel">
+                    <img class="icon" src="images/personeller.png">
+                    <span class="span"><a href="ys_personel_raporu.html" style="color:black" class="linkler">PERSONEL RAPORU</a></span>
+                </div>
+                <hr width="200" align="center" color="#696969">
+                <div class="panel">
+                    <img class="icon" src="images/cikis.png">
+                    <span class="span">ÇIKIŞ</span>
+                </div>                
+            </div>
+            <div class="content">
+                <div class="content_ustu">
+                    <div class="content_ici">
+                        <div class="content_üstündeki_yazi">
+                            Günlük Sipariş Listesi
+                        </div>                        
+                    </div>                                       
+                    <div class="siparis_tablo">
+                        <table cellspacing="0" cellpadding="0" bordercolor="lightgray" border="1">
+                            <tr>
+                            <td height="40" width="100" bgcolor="#EEEEEE" align="center"><font color="black"><b>Referans</b></font></td>
+                            <td width="120" bgcolor="#EEEEEE" align="center"><font color="black"><b>Müşteri</b></font></td>
+                            <td width="120" bgcolor="#EEEEEE" align="center"><font color="black"><b>İletişim</b></font></td>
+                            <td width="120" bgcolor="#EEEEEE" align="center"><font color="black"><b>Sipariş</b></font></td>
+                            <td width="120" bgcolor="#EEEEEE" align="center"><font color="black"><b>Restaurant</b></font></td>
+                            <td width="120" bgcolor="#EEEEEE" align="center"><font color="black"><b>Sevkiyat Tipi</b></font></td>
+                            <td width="120" bgcolor="#EEEEEE" align="center"><font color="black"><b>Ödeme Tipi</b></font></td>
+                            <td width="120" bgcolor="#EEEEEE" align="center"><font color="black"><b>Toplam</b></font></td>
+                            <td width="120" bgcolor="#EEEEEE" align="center"><font color="black"><b>KDV</b></font></td>                            
+                            <td width="120" bgcolor="#EEEEEE" align="center"><font color="black"><b>Durum</b></font></td>                                                        
+                            </tr>
+                                                        
+                            <tr bgcolor="#FFFFFF">
+                            <td height="45" align="center"><font color="#000000">1</font></td>
+                            <td align="center">Ali Can</td>
+                            <td align="center">05034056768</td>
+                            <td align="center">Kral Burger Menu</td>
+                            <td align="center">Burger Heaven</td>
+                            <td align="center">Paket Servis</td>
+                            <td align="center">Nakit</td>
+                            <td align="center">59.00 ₺</td>
+                            <td align="center">9.90 ₺</td>
+                            <td align="center"><marquee behavior="scroll"  scrollamount="3">Sipariş Hazırlanıyor...</marquee></td>
+                            
+                            </tr>
+                            
+                            <tr bgcolor="#FFFFFF">
+                            <td height="45" align="center"><font color="#000000">2</font></td>
+                            <td align="center">Canan Tan</td>
+                            <td align="center">05094056768</td>
+                            <td align="center">Dana Rosto</td>
+                            <td align="center">Köfteci Yusuf</td>
+                            <td align="center">Paket Servis</td>
+                            <td align="center">Kart/Ticket</td>
+                            <td align="center">89.75 ₺</td>
+                            <td align="center">10.99 ₺</td>
+                            <td align="center"><marquee behavior="scroll"  scrollamount="3">Sipariş Hazırlanıyor...</marquee></td>
+                            
+                            </tr>
+                            
+                            <tr bgcolor="#FFFFFF">
+                            <td height="45" align="center"><font color="#000000">3</font></td>
+                            <td align="center">Nilsu Varol</td>
+                            <td align="center">05039056466</td>
+                            <td align="center">Çiğ Köfte Dürüm</td>
+                            <td align="center">Battalbey</td>
+                            <td align="center">Paket Servis</td>
+                            <td align="center">Kredi Kartı</td>
+                            <td align="center">12.50 ₺</td>
+                            <td align="center">3.90 ₺</td>
+                            <td align="center"><button onclick="window.location.href='ys_musteri_raporu.html'"><font title="İlgili Müşteri Değerlendirmesini Görüntülemek İçin Tıklayınız.">Tamamlandı</font></button></td>
+                            
+                            </tr>
+                            
+                            <tr bgcolor="#FFFFFF">
+                            <td height="45" align="center"><font color="#000000">4</font></td>
+                            <td align="center">Ecrin Çelik</td>
+                            <td align="center">05094058980</td>
+                            <td align="center">Çıtır Tavuk Menu</td>
+                            <td align="center">KFC</td>
+                            <td align="center">Paket Servis</td>
+                            <td align="center">Kredi Kartı</td>
+                            <td align="center">56.72 ₺</td>
+                            <td align="center">2.45 ₺</td>
+                            <td align="center"><marquee behavior="scroll"  scrollamount="3">Sipariş Hazırlanıyor...</marquee></td>
+                            
+                            </tr>
+                            
+                            <tr bgcolor="#FFFFFF">
+                            <td height="45" align="center"><font color="#000000">5</font></td>
+                            <td align="center">Ayberk Göker</td>
+                            <td align="center">05019323567</td>
+                            <td align="center">Pizza Margarita</td>
+                            <td align="center">Dominos Pizza</td>
+                            <td align="center">Paket Servis</td>
+                            <td align="center">Nakit</td>
+                            <td align="center">75.00 ₺</td>
+                            <td align="center">4.99 ₺</td>
+                            <td align="center"><button onclick="window.location.href='ys_musteri_raporu.html'"><font title="İlgili Müşteri Değerlendirmesini Görüntülemek İçin Tıklayınız.">Tamamlandı</font></button></td>                            
+                            </tr>                                                                                                                                            
+                            </table>
+
+                    </div>
+                    
+                </div>
+                <div class="content_orta">
+                    <div class="kutu_content_icerik">
+                        <div id="chartContainer">
+
+                        </div>
+
+                    </div>
+                    <div class="kutu_content_icerik">
+                        <div id="chartContainer2">
+
+                        </div>
+
+                    </div>
+                    <div class="kutu_content_icerik">
+                        <div id="chartContainer3">
+
+                        </div>
+
+                    </div>                                                                                
+                </div>
+            </div>
+            
+
+        </div>
+        
+    </div>
+    
+    
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>   
+    
+    <title>Restaurantlar</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Yönetim Paneli"/>
+    <meta name="Keywords" content="Yemeksepeti, Yönetim, Panel">
+    <meta name="googlebot" content="noarchive"/>
+    <meta name="Revisit-After" content="1 days"/>
+    <meta name="robots" content="index,contact"/>
+    <meta name="copyright" content="Yemeksepeti - 2021">    
+    <link href="ys_style_restaurant.css" type="text/css" rel="stylesheet">    
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>  <!--METANIN ALTINA SCRİPTİ CHART EKLEMEK İÇİN KOPYALADIK-->
+    
+<script>
+window.onload = function () {
+	
+    var chart = new CanvasJS.Chart("chartContainer", {
+        animationEnabled: true,
+        
+        title:{
+            text:"En Çok Sipariş Alan Restaurantlar"
+        },
+        axisX:{
+            interval: 1
+        },
+        axisY2:{
+            interlacedColor: "rgba(1,77,101,.2)",
+            gridColor: "rgba(1,77,101,.1)",
+            title: "Tercih Edilme Yüzdeleri"
+        },
+        data: [{
+            type: "bar",
+            name: "companies",
+            axisYType: "secondary",
+            color: "#014D65",
+            toolTipContent: "<b>{indexLabel}:</b> {y}%",
+            dataPoints: [
+                { y: 85, label: "Burger King" },
+                { y: 65, label: "Dominos Pizza " },
+                { y: 50, label: "Battalbey" },
+                { y: 45, label: "KFC" },
+                { y: 90, label: "Köfteci Yusuf" },
+                { y: 80, label: "Pizza Pizza" },
+                { y: 40, label: "Bülent Börek" },
+                { y: 40, label: "Burger Heaven" },
+                { y: 20, label: "MC Donalds" },
+                
+            ]
+        }]
+    });
+    chart.render();
+    var chart2 = new CanvasJS.Chart("chartContainer2", {
+	animationEnabled: true,
+	title: {
+		text: "Restaurant Bazında Aktif Kurye Sayısı(%)"
+	},
+	data: [{
+		type: "pie",
+		startAngle: 240,
+		yValueFormatString: "##0.00\"%\"",
+		indexLabel: "{label} {y}",
+		dataPoints: [
+			{y: 25, label: "Köfteci Yusuf"},
+			{y: 35, label: "Bülent Börek"},
+			{y: 50, label: "Hakan Çorba"},
+			{y: 8, label: "Kardeşler Pide Kebap Salonu"},
+			{y: 5, label: "Starbucks"}
+		]
+	}]
+});
+chart2.render();        
+}
+//Java Script Kodları    
+</script>    
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header_genel">
+                <div class="header_ic1">
+                    <img class="logo" src="images/yemeksepeti.webp" alt="logo">
+                </div>
+                <div class="header_ic2">
+                    <form>
+                        <div id="box">
+                            <input type="text" id="search" placeholder="Merak Ettikleriniz...">
+                            <i class="fa fa-search"></i>
+                        </div>
+                     </form>
+                </div>
+                <div class="header_ic3">
+                    <img class="mesaj" src="images/mesaj.png" alt="mesaj">
+                    <img class="bildirim" src="images/bildirim.png" alt="bildirim">
+                    <img class="ayarlar" src="images/ayarlar.png" alt="ayarlar">
+                </div>
+            </div>
+        </div>
+        <div class="headerin_alti">            
+            <div class="sidebar">                
+                <div class="menu">                    
+                    <div class="menu_yazi">
+                        ANA MENU
+                    </div>
+                    <img class="menu_logo" src="images/menu_cizgi.png" alt="menu_cizgi">               
+                </div>                                                
+                <div class="panel">
+                    <img class="icon" src="images/yonetim_panel_icon.png">
+                    <span class="span"><a href="ys_anasayfa.html" style="color:black" class="linkler">YÖNETİM PANELİ</a></span>                 
+                </div>
+                <hr width="200" align="center" color="#696969">
+                <div class="panel">
+                    <img class="icon" src="images/restaurantlar.png">
+                    <span class="span"><a href="ys_restaurantlar.html" style="color:black" class="linkler">RESTAURANTLAR</a></span>
+                </div>
+                <hr width="200" align="center" color="#696969">
+                <div class="panel">
+                    <img class="icon" src="images/siparisler.png">
+                    <span class="span"><a href="ys_siparis_raporu.html" style="color:black" class="linkler">SİPARİŞ RAPORU</a></span>
+                </div>
+                <hr width="200" align="center" color="#696969">
+                <div class="panel">
+                    <img class="icon" src="images/musteriler.png">
+                    <span class="span"><a href="ys_musteri_raporu.html" style="color:black" class="linkler">MÜŞTERİ RAPORU</a></span>
+                </div>
+                <hr width="200" align="center" color="#696969">
+                <div class="panel">
+                    <img class="icon" src="images/personeller.png">
+                    <span class="span"><a href="ys_personel_raporu.html" style="color:black" class="linkler">PERSONEL RAPORU</a></span>
+                </div>
+                <hr width="200" align="center" color="#696969">
+                <div class="panel">
+                    <img class="icon" src="images/cikis.png">
+                    <span class="span">ÇIKIŞ</span>
+                </div>                
+            </div>
+            <div class="content">
+                <div class="content_ustu">
+                    <div class="content_ici">
+                        <div class="content_üstündeki_yazi">
+                            Anlaşmalı Restaurantların Analizi
+                        </div>                        
+                    </div>                                                                               
+                </div>
+                <div class="content_baslangic">
+                    <div class="kutu_content">
+                        <div class="kutu_content_icerik">
+                            <div id="chartContainer">    
+                            </div>    
+                        </div>
+                    </div>                    
+                    <div class="kutu_content_icerik">
+                        <div id="chartContainer2">
+                        </div>
+                    </div>
+                    <div class="kutu_content_icerik">
+                        <div class="kutu_content_form_kenarlik">                            
+                            <br>
+                            Restaurant Seçiniz:<select>
+                            <option>Köfteci Yusuf</option>
+                            <option>Bülent Börek</optio>
+                            <option>Hakan Çorba</option>
+                            <option>Kardeşler Pide Kebap</option>
+                            <option>Starbucks</optio>
+                            <option>Burger King</option>
+                            <option>Pizza Pizza</option>
+                            <option>Macaroni</optio>
+                            <option>Kumrucu Şevki</option>
+                            </select>                            
+                            Aktif Kurye Sayısı:<input type="text" name="txtSIsim">
+                        Onaylamak İçin Şifrenizi Giriniz:<input type="password" name="txtSifre">                              
+                            <input id="buton" type="submit" name="btnGonder" value="Güncelle">
+                            <input id="buton" type="reset" name="btnTemizle" value="Temizle">
+
+                        </div>                                                                                                                                                                                                                                                                                             
+                                                                      
+                    </div>                    
+                    <div class="content_baslangic">
+                        <div class="kutu_content_icerik2">
+                            <div class="siparis_tablo">
+                                <table cellspacing="0" cellpadding="0" bordercolor="lightgray" border="1">
+                                    <tr>
+                                    <td height="43" width="200" bgcolor="#EEEEEE" align="center"><font color="black"><b>Restaurant<b></font></td>
+                                    <td width="200" bgcolor="#EEEEEE" align="center"><font color="black"><b>Şube</b></font></td>
+                                    <td width="200" bgcolor="#EEEEEE" align="center"><font color="black"><b>İletişim</b></font></td>
+                                    <td width="200" bgcolor="#EEEEEE" align="center"><font color="black"><b>Aktif Kurye Sayısı</b></font></td>
+                                    <td width="200" bgcolor="#EEEEEE" align="center"><font color="black"><b>Durum</b></font></td>
+                                                                                           
+                                    </tr>                                                                
+                                    <tr bgcolor="#FFFFFF">
+                                    <td height="41" align="center"><font color="#000000">Köfteci Yusuf</font></td>                                                                        
+                                    <td align="center">Urla</td>
+                                    <td align="center">0224 773 6261</td>
+                                    <td align="center">25</td>
+                                    <td align="center"><marquee behavior="scroll"  scrollamount="3">24 Saat Açık</marquee></td>                                    
+                                    </tr>
+                                    
+                                    <tr bgcolor="#FFFFFF">
+                                    <td height="41" align="center"><font color="#000000">Bülent Börek</font></td>                                    
+                                    <td align="center">Balçova</td>
+                                    <td align="center">0232 353 6261</td>
+                                    <td align="center">35</td>
+                                    <td align="center"><marquee behavior="scroll"  scrollamount="3">20.00 a Kadar Açığız</marquee></td>
+                                    
+                                    </tr>
+                                    
+                                    <tr bgcolor="#FFFFFF">
+                                    <td height="41" align="center"><font color="#000000">Hakan Çorba</font></td>                                    
+                                    <td align="center">Narlıdere</td>
+                                    <td align="center">0232 353 5667</td>
+                                    <td align="center">50</td>
+                                    <td align="center"><marquee behavior="scroll"  scrollamount="3">7/24 Hizmetinizde</marquee></td>
+                                    
+                                    </tr>
+                                    
+                                    <tr bgcolor="#FFFFFF">
+                                    <td height="41" align="center"><font color="#000000">Kardeşler Pide Kebap</font></td>                                    
+                                    <td align="center">Limontepe</td>
+                                    <td align="center">0232 456 9090</td>
+                                    <td align="center">8</td>
+                                    <td align="center"><marquee behavior="scroll"  scrollamount="3">20.00 a Kadar Açığız</marquee></td>
+                                    
+                                    </tr>
+                                    
+                                    <tr bgcolor="#FFFFFF">
+                                    <td height="41" align="center"><font color="#000000">Starbucks</font></td>                                                                        
+                                    <td align="center">Konak</td>
+                                    <td align="center">0232 456 23 21</td>
+                                    <td align="center">5</td>
+                                    <td align="center"><marquee behavior="scroll"  scrollamount="3">24 Saat Açık</marquee></td>                            
+                                    </tr>                                                                                                                                            
+                                    </table>
+        
+                            </div>
+    
+                        </div>
+                        <div class="kutu_content_icerik">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3123.7175991573667!2d27.220519214739657!3d38.4710804795662!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b97de7727682b7%3A0x3b862ec2db14f80d!2sYemek%20Sepeti%20Bana%20Bi!5e0!3m2!1str!2str!4v1624535329230!5m2!1str!2str" width="350" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    
+                        </div>                         
+                    </div>                                                                                                
+                </div>
+            </div>
+            
+
+        </div>
+        
+    </div>
+    
+    
+</body>
+</html>
